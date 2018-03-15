@@ -6,7 +6,7 @@ import lombok.Data;
  * Created by jack on 2018/3/15.
  */
 @Data
-public class MusicMessage {
+public class MusicMessage extends BaseMessage{
     // 音乐名称
     private String Title;
     // 音乐描述
