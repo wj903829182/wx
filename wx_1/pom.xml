@@ -42,6 +42,30 @@
 			<version>1.2.46</version>
 		</dependency>
 
+		<!--lombok 进行set和get操作-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--dom4j去解析xml-->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<!--开源框架xstream来实现Java类到xml的转换-->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.10</version>
+		</dependency>
+
+
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
