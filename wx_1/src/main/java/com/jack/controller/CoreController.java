@@ -1,5 +1,6 @@
 package com.jack.controller;
 
+import com.jack.util.HandlerMessageUtil;
 import com.jack.util.SignUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,7 +57,15 @@ public class CoreController {
     @RequestMapping(method = RequestMethod.POST)
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         // TODO 消息的接收、处理、响应
-        System.out.println("post");
+        // 将请求、响应的编码均设置为UTF-8（防止中文乱码）
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        // 调用核心业务类接收消息、处理消息
+        String respMessage = HandlerMessageUtil.handlerMessage(request);
+        // 响应消息
+        PrintWriter out = response.getWriter();
+        out.print(respMessage);
+        out.close();
     }
 
 
