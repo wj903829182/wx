@@ -1,5 +1,6 @@
 package com.jack.util;
 
+import com.jack.message.req.LocationMessage;
 import com.jack.message.resp.Article;
 import com.jack.message.resp.MusicMessage;
 import com.jack.message.resp.NewsMessage;
@@ -149,6 +150,16 @@ public class MessageUtil {
         xstream.alias("xml", newsMessage.getClass());
         xstream.alias("item", new Article().getClass());
         return xstream.toXML(newsMessage);
+    }
+
+    /**
+     * 定位消息对象转换为xml
+     * @param locationMessage 定位消息对象
+     * @return
+     */
+    public static String locationMessageToXml(LocationMessage locationMessage){
+        xstream.alias("xml",locationMessage.getClass());
+        return xstream.toXML(locationMessage);
     }
 
     /**

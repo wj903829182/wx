@@ -1,6 +1,7 @@
 package com.jack.util;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jack.message.req.LocationMessage;
 import com.jack.message.resp.TextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +45,9 @@ public class HandlerMessageUtil {
             textMessage.setFuncFlag(0);
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
-                respContent = "您发送的是文本消息！";
+                //respContent = "您发送的是文本消息！";
+                //respContent = "<a href='https://map.baidu.com/'>百度地图</a> " ;
+                respContent = "[难过] /难过 /::(" ;
             }
             // 图片消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) {
@@ -53,6 +56,9 @@ public class HandlerMessageUtil {
             // 地理位置消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_LOCATION)) {
                 respContent = "您发送的是地理位置消息！";
+                LocationMessage locationMessage = handlerLocationMessage(fromUserName,toUserName,msgType,requestMap);
+                respMessage = MessageUtil.locationMessageToXml(locationMessage);
+                return respMessage;
             }
             // 链接消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_LINK)) {
@@ -84,7 +90,28 @@ public class HandlerMessageUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return respMessage;
     }
+
+    /**
+     *
+     * @param fromUserName
+     * @param toUserName
+     * @param msgType
+     * @param requestMap
+     * @return
+     */
+    public static LocationMessage handlerLocationMessage(String fromUserName,String toUserName, String msgType,Map<String, String> requestMap) {
+        LocationMessage locationMessage = new LocationMessage();
+        //经度
+        locationMessage.setLocation_Y("114.02934");
+        //纬度
+        locationMessage.setLocation_X("22.62148");
+        locationMessage.setScale("5");
+        locationMessage.setLabel("位置信息");
+        locationMessage.setCreateTime(System.currentTimeMillis());
+        locationMessage.setMsgType("location");
+        return locationMessage;
+    }
+
 }

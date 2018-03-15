@@ -2,6 +2,8 @@ package com.jack.controller;
 
 import com.jack.util.HandlerMessageUtil;
 import com.jack.util.SignUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +21,8 @@ import java.io.PrintWriter;
 @RestController
 @RequestMapping("coreHandler")
 public class CoreController {
+
+    private static final Logger logger = LoggerFactory.getLogger(CoreController.class);
     /**
      * 确认请求来自微信服务器
      *
@@ -62,6 +66,7 @@ public class CoreController {
         response.setCharacterEncoding("UTF-8");
         // 调用核心业务类接收消息、处理消息
         String respMessage = HandlerMessageUtil.handlerMessage(request);
+        logger.info("发送给微信的消息为：\n"+respMessage);
         // 响应消息
         PrintWriter out = response.getWriter();
         out.print(respMessage);
