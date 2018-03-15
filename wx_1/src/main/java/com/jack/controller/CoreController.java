@@ -28,7 +28,7 @@ public class CoreController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       /* // 微信加密签名
+       // 微信加密签名
         String signature = request.getParameter("signature");
         // 时间戳
         String timestamp = request.getParameter("timestamp");
@@ -42,7 +42,7 @@ public class CoreController {
             out.print(echostr);
         }
         out.close();
-        out = null;*/
+        out = null;
         System.out.println("get");
     }
 
