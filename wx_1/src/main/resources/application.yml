@@ -10,4 +10,4 @@ logging:
         #com.qwrt.fire.sensor: DEBUG
         #root: DEBUG
     config: classpath:logback.xml
-    path: /root/log/wx
+    path: /root/logs/wx
