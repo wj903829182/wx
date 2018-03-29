@@ -2,3 +2,12 @@ server:
   port: 9999
   servlet:
     context-path: /wx
+
+
+logging:
+    #level:
+        #tk.mybatis: DEBUG
+        #com.qwrt.fire.sensor: DEBUG
+        #root: DEBUG
+    config: classpath:logback.xml
+    path: /root/log/wx
