@@ -45,9 +45,9 @@ public class HandlerMessageUtil {
             textMessage.setFuncFlag(0);
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
-                //respContent = "您发送的是文本消息！";
+                respContent = "您发送的是文本消息！";
                 //respContent = "<a href='https://map.baidu.com/'>百度地图</a> " ;
-                respContent = "[难过] /难过 /::(" ;
+                //respContent = "[难过] /难过 /::(" ;
             }
             // 图片消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) {
