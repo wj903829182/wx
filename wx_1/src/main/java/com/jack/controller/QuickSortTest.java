@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class QuickSortTest {
 
 
-    private static int c=1;
+    private static int c = 1;
     /**
      * 快速排序
      * @param a
@@ -46,10 +46,8 @@ public class QuickSortTest {
 
     public static void main(String[] args) {
         int a[] = { 49, 38, 65, 97, 76, 13, 27, 49 };
-        System.out.println("排序前的结果为：");
-        System.out.println(Arrays.toString(a));
+        System.out.println("排序前的结果为："+Arrays.toString(a));
         quickSort(a);
-        System.out.println("快速排序的结果为：");
-        System.out.println(Arrays.toString(a));
+        System.out.println("快速排序的结果为："+Arrays.toString(a));
     }
 }
