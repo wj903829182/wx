@@ -56,9 +56,9 @@ public class HandlerMessageUtil {
             // 地理位置消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_LOCATION)) {
                 respContent = "您发送的是地理位置消息！";
-                LocationMessage locationMessage = handlerLocationMessage(fromUserName,toUserName,msgType,requestMap);
-                respMessage = MessageUtil.locationMessageToXml(locationMessage);
-                return respMessage;
+                //LocationMessage locationMessage = handlerLocationMessage(fromUserName,toUserName,msgType,requestMap);
+                //respMessage = MessageUtil.locationMessageToXml(locationMessage);
+                //return respMessage;
             }
             // 链接消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_LINK)) {
